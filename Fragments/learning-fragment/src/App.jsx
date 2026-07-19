@@ -1,6 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-
+import FoodItem from './components/FoodItem';
+import ErrorMessage from './components/ErrorMessage';
 
 function App() {
 
@@ -8,14 +9,11 @@ function App() {
 
   return (
     <> {/* this is fragment tag */}
-      Healthy Food
-      <ul className="list-group">
-        {food.map((item) => (
-          <li key={item} className="list-group-item">{item}</li>
-        ))}
-      </ul>
+      <h1 className='food-heading'>Healthy Food</h1>
+      <ErrorMessage food={food}/>
+      <FoodItem food={food}/>
     </>
   );
 }
 
-export default App
+export default App;
