@@ -1,17 +1,14 @@
 import styles from './Container.module.css'
 
-const Item = (props) => {
-
-    const handleBuyButtonClicked = (event) => {
-        console.log(event);
-        console.log(`${props.food} being bought`);
-    }
+const Item = ({food, handleBuyButtonClicked}) => { 
 
     return (
         <li className="list-group-item kg-item">
-            <span className="kg-span">{props.food}</span>
-            <button className={`${styles.button} btn btn-info`}
-                onClick={(event) => handleBuyButtonClicked(event)}
+            <span className="kg-span">{food}</span>
+
+            <button 
+                className={`${styles.button} btn btn-info`}
+                onClick={handleBuyButtonClicked}
             >Buy</button>
         </li>
     );
